@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>Adyen</Copyright>
+
+    <Version>20.0.0</Version>
+    <AssemblyVersion>20.0.0</AssemblyVersion>
+    <FileVersion>20.0.0</FileVersion>
+
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
+    <Description>The Adyen API Library for .net core enables you to work with Adyen APIs, Hosted Payment Pages and terminal api with any .net application.</Description>
+    <PackageProjectUrl>https://github.com/Adyen/adyen-dotnet-api-library</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Adyen/adyen-dotnet-api-library</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+
+    <PackageTags>20.0.0</PackageTags>
+
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Authors>Adyen</Authors>
+    <Company>Adyen</Company>
+    <Title>adyen-dotnet-api-library</Title>
+    <Product>Adyen library</Product>
+    <NeutralLanguage>en</NeutralLanguage>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>adyen-dotnet-api-library-key.snk</AssemblyOriginatorKeyFile>
+    <PackageIcon>adyen-logo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageVersion>20.0.0</PackageVersion>
+    <!-- add xml descriptions -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+  <!-- .NET 4.5 references, compilation flags and build options -->
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Microsoft.Build.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="adyen-logo.png" Pack="true" Visible="false" PackagePath="" />
+    <None Include="..\README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+</Project>

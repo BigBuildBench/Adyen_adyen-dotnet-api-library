@@ -1,0 +1,10 @@
+{
+  "status": 422,
+  "errorCode": "14_018",
+  "message": "Invalid payload provided",
+  "errorType": "validation",
+  "merchantReference": "merchantReference",
+  "paymentMethod": "applepay",
+  "shopperLocale": "NL"
+
+}

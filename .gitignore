@@ -1,0 +1,6 @@
+.vs/
+TestResults/
+.vagrant/
+.idea/
+*.user
+target/

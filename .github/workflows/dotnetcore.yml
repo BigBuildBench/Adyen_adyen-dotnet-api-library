@@ -1,0 +1,32 @@
+name: .NET Core
+
+on: [ push ]
+
+jobs:
+  build:
+    name: Build and test
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            6.0.x
+      - name: Install tools
+        run: |
+          dotnet restore
+
+      - name: Build Debug
+        run: dotnet build -c Debug
+
+      - name: Run test suite net6.0
+        run: dotnet test --no-build -c Debug -f net6.0 Adyen.Test/Adyen.Test.csproj
+
+      - name: Run integration test suite net6.0
+        run: dotnet test --no-build -c Debug -f net6.0 Adyen.IntegrationTest/Adyen.IntegrationTest.csproj
+        if: ${{ contains(github.event.pull_request.labels.*.name, 'release') }}

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="MarketpayAccountTest.cs" />
+      <Compile Remove="MarketPayFundTest.cs" />
+    </ItemGroup>
+
+</Project>
